@@ -8,7 +8,7 @@ The BetterAuction smart contract allows the owner (beneficiary) to conduct an au
 
 **Table of contents**
 * [Background And History](#background-and-history)
-* [Security Overview Of The BetterAuction](#security-overview-of-the-betterauction)
+* [Security Overview Of The BetterAuction Contract](#security-overview-of-the-betterauction-contract)
   * [Other Notes](#other-notes)
 * [Comments On The Source Code](#comments-on-the-source-code)
 * [References](#references)
@@ -35,7 +35,7 @@ The BetterAuction smart contract allows the owner (beneficiary) to conduct an au
 
 <hr />
 
-## Security Overview Of The BetterAuction
+## Security Overview Of The BetterAuction Contract
 * [x] The smart contract has been kept relatively simple
 * [x] The code has been tested for the normal use cases, and around the boundary cases
 * [x] The testing has been done using geth 1.5.9-stable and solc 0.4.9+commit.364da425.Darwin.appleclang instead of one of the testing frameworks and JavaScript VMs to simulate the live environment as closely as possible
@@ -47,7 +47,7 @@ The BetterAuction smart contract allows the owner (beneficiary) to conduct an au
   * [x] Only the beneficiary can call `beneficiaryCloseAuction(...)` to receive the winning bidder's funds
   * [x] Non-highest bidders retrieve their funds by calling `nonHighestBidderRefund(...)`
 * [x] There is no logic with potential division by zero errors
-* [x] All numbers used are uint256, reducting the risk of errors from type conversions
+* [x] All numbers used are uint256, reducing the risk of errors from type conversions
 * [x] There is no logic with potential overflow errors, as the numbers added are taken from the value of ethers sent in each transaction, this value is validated as part of the sent transactions and these values are small compared to the uint256 limits
 * [x] There is no logic with potential underflow errors as there are no subtractions used in this code
 * [x] Function and event names are differentiated by case - function names begin with a lowercase character and event names begin with an uppercase character
